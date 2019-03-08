@@ -1,0 +1,27 @@
+body {
+    background: url(../images/background.png)
+}
+header {
+    font-family: 'Henny Penny', cursive;
+    font-size: 80px;
+    margin-top: 2%;
+    text-align: center;
+    color: rgb(0, 0, 0)
+}
+.container {
+    position: relative;
+    width: 70%;
+    margin: auto;
+    top: 2em;
+    background-color: rgba(0, 0, 0, 0.534);
+}
+/* img {
+    width: 50%;
+    margin-left: 25%;
+    top: 5em;
+    transform: rotate(-18deg);
+    -webkit-transform: rotate(-18deg);
+    -moz-transform: rotate(-18deg);
+    -ms-transform: rotate(-18deg);
+    -o-transform: rotate(-18deg);
+} */
