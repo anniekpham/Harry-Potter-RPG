@@ -3,18 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/dh icon.jpg">
     <link rel="stylesheet" href="./assets/css/reset.css">
-    <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Henny+Penny" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
+    <title>Harry Potter RPG</title>
 </head>
 <body>
-    <header class="hp">Harry Potter</header>
+    <header class="hp">
+        <div class="title">Expelliamus</div>
+        <img src="./assets/images/wand.png" alt="wand" class="wand1">
+        <img src="./assets/images/wand2.png" alt="wand" class="wand2">
+    </header>
     <div class="container">
-        <span class="wandimg">
-            <img src="./assets/images/wand.png" alt="wand">
-        </span>
+        <div class="row">
+            <div class="col s3">
+                <button class="row characters" id="char1" data-health="100">
+                    <p>Harry Potter</p>
+                    <img src="./assets/images/harry.jpg" alt="Harry">
+                    <p>100</p>
+                </button>
+                <button class="row characters" id="char2"  data-health="120">
+                    <p class="Snape">Professor Snape</p>
+                    <img src="./assets/images/Snape.jpg" alt="Snape">
+                    <p>120</p>
+                </button>
+            </div>
+            <div class="col s6">
+                <div class="row" id="chosenchar">
+                    <div class="col s6" id="yourchar"></div>
+                    <div class="col s6" id="enemychar"></div>
+                </div>
+                <div class="row attack"></div>
+            </div>
+            <div class="col s3">
+                <button class="row characters" id="char3" data-health="150">
+                    <p>Lord Voldemort</p>
+                    <img src="./assets/images/Voldemort.jpeg" alt="Voldemort">
+                    <p>150</p>
+                </button>
+                <button class="row characters" id="char4" data-health="130">
+                    <p>Bellatrix Lestrange</p>
+                    <img src="./assets/images/Bellatrix.jpg" alt="Bellatrix">
+                    <p>130</p>
+                </button>
+            </div>
+        </div>
     </div>
-<script src="javascript.js"></script>
+    <audio autoplay="autoplay" controls="controls">    
+            <source src="Hedwig.mp3"/>
+    </audio> 
+<script src="./assets/javascript/game.js"></script>
 </body>
 </html>

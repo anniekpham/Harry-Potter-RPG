@@ -1,27 +1,69 @@
+body, html {
+    min-height: 100%;
+}
 body {
-    background: url(../images/background.png)
+    background: url(../images/harry_potter_and_the_deathly_hallows-wallpaper-1920x1080.jpg);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-header {
+.title {
     font-family: 'Henny Penny', cursive;
-    font-size: 80px;
-    margin-top: 2%;
+    font-size: 90px;
+    margin: 2% auto;
     text-align: center;
-    color: rgb(0, 0, 0)
+    color: rgb(255, 255, 255);
+    width: 50%;
 }
-.container {
+.wand1 {
+    position: absolute;
+    display: inline;
+    top: .5em;
+    left: 37em;
+    width: 190px;
+    transform: rotate(30deg);
+}
+.wand2 {
+    position: absolute;
+    display: inline;
+    top: -1em;
+    right: 37em;
+    width: 150px;
+    transform: rotate(-20deg);
+}
+.col.s3 {
     position: relative;
-    width: 70%;
     margin: auto;
     top: 2em;
-    background-color: rgba(0, 0, 0, 0.534);
+    background-color: rgba(255, 255, 255, 0.329);
+    padding-left: 3%;
 }
-/* img {
-    width: 50%;
-    margin-left: 25%;
-    top: 5em;
-    transform: rotate(-18deg);
-    -webkit-transform: rotate(-18deg);
-    -moz-transform: rotate(-18deg);
-    -ms-transform: rotate(-18deg);
-    -o-transform: rotate(-18deg);
-} */
+.col.s6 {
+    position: relative;
+    margin: auto;
+    top: 2em;
+    background-color: rgba(255, 255, 255, 0.185);
+    width: 50%
+}
+img {
+    display: block;
+    width: 200px;
+    margin: 3% auto 7% auto ;
+    padding-top: 10%S
+}
+button {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 30px;
+    margin-top: 13%;
+    display: block;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    width: 100%;
+}
+button:focus {
+    background: none;
+}
+audio {
+    width: 10%
+}
