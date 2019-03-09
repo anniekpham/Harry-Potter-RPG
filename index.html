@@ -13,41 +13,41 @@
 <body>
     <header class="hp">
         <div class="title">Expelliamus</div>
-        <img src="./assets/images/wand.png" alt="wand" class="wand1">
-        <img src="./assets/images/wand2.png" alt="wand" class="wand2">
+        <!-- <img src="./assets/images/wand.png" alt="wand" class="wand1">
+        <img src="./assets/images/wand2.png" alt="wand" class="wand2"> -->
     </header>
     <div class="container">
         <div class="row">
             <div class="col s3">
-                <button class="row characters" id="char1" data-health="100">
-                    <p>Harry Potter</p>
-                    <img src="./assets/images/harry.jpg" alt="Harry">
+                <div class="row characters">
+                    <p class="name">Harry Potter</p>
+                    <input type="image" src="./assets/images/harry.jpg" class="character" id="character" data-value="100">
                     <p>100</p>
-                </button>
-                <button class="row characters" id="char2"  data-health="120">
-                    <p class="Snape">Professor Snape</p>
-                    <img src="./assets/images/Snape.jpg" alt="Snape">
+                </div>
+                <div class="row characters" id="char2">
+                    <p class="name">Professor Snape</p>
+                    <input type="image" src="./assets/images/Snape.jpg" class="character" id="character" data-value="120" value="Harry Potter">
                     <p>120</p>
-                </button>
+                </div>
             </div>
-            <div class="col s6">
+            <div class="col s6 selected" id="actioncontainer">
                 <div class="row" id="chosenchar">
                     <div class="col s6" id="yourchar"></div>
                     <div class="col s6" id="enemychar"></div>
                 </div>
-                <div class="row attack"></div>
+                <div class="row" id="attack"></div>
             </div>
             <div class="col s3">
-                <button class="row characters" id="char3" data-health="150">
-                    <p>Lord Voldemort</p>
-                    <img src="./assets/images/Voldemort.jpeg" alt="Voldemort">
+                <div class="row characters" id="char3">
+                    <p class="name">Lord Voldemort</p>
+                    <input type="image" src="./assets/images/Voldemort.jpeg" class="character" id="character" data-value="150">
                     <p>150</p>
-                </button>
-                <button class="row characters" id="char4" data-health="130">
-                    <p>Bellatrix Lestrange</p>
-                    <img src="./assets/images/Bellatrix.jpg" alt="Bellatrix">
+                </div>
+                <div class="row characters" id="char4">
+                    <p class="name">Bellatrix Lestrange</p>
+                    <input type="image" src="./assets/images/Bellatrix.jpg" class="character" id="character" data-value="130">
                     <p>130</p>
-                </button>
+                </div>
             </div>
         </div>
     </div>
