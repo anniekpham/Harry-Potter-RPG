@@ -1,4 +1,4 @@
-let allied, 
+let allied,
     allieshealth,
     alliesattack,
     enemy,
@@ -69,6 +69,21 @@ const attack = () => {
 
 }
 
+const newenemy = () => {
+    if (enemyshealth <= attackbtn) {
+        enemyshealth = 0
+        document.querySelector('#enemychar').innerHTML = enemyshealth
+        if (enemyshealth === 0){
+            document.querySelector('#enemychar').innerHTML = ''
+            enemy = ''
+            enemysattack = ''
+            enemyshealth = ''
+            !isdoneSelect
+            document.querySelector('#attack').textContent = ''
+        }
+    }
+}
+
 const attackpower = () => {
     document.addEventListener('click', ({target}) => {
         if (target.className === 'attack') {
@@ -80,6 +95,7 @@ const attackpower = () => {
             alliesattack += parseInt(attackbtn)
             console.log(attackbtn)
         }
+        // newenemy()
     })
 }
 
@@ -113,7 +129,8 @@ document.addEventListener ('click', ({ target }) => {
         // document.querySelector('#character').disabled = true;
 
         isdoneSelect = true
-        attack(attackpower())
+        attack()
+        attackpower()
         }
     }
 })
