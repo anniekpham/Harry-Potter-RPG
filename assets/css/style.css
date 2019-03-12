@@ -143,4 +143,7 @@ audio {
         padding-left: 1%;
         padding-right: 1%;
     }
+    .result {
+        font-size: 80px;
+    }
 }
