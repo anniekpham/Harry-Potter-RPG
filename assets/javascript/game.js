@@ -10,11 +10,24 @@ let alliescounter,
 let audio = new Audio('Hedwig.mp3')
 audio.loop = true
 
+
 const gamestart = () => {
     alliescounter = ''
     enemy = ''
     isdoneSelect = false
-    document.querySelector('#attack').innerHTML = ''
+    document.querySelector('.container').style.visibility = 'hidden'
+    let start = document.createElement('button')
+    start.textContent = 'Revelio'
+    start.className = 'startbtn'
+    document.querySelector('body').append(start)
+    document.addEventListener('click' , ({target}) =>{
+        if (target.className === 'startbtn') {
+            audio.play()
+            target.style.visibility = 'hidden'
+            document.querySelector('.container').style.visibility = ''
+
+        }
+    })
 }
 
 const newenemy = () => {
@@ -88,7 +101,7 @@ const attackpower = () => {
 
 document.addEventListener ('click', ({ target }) => {
     if (target.className === 'character' && !alliescounter) {
-        audio.play()
+        // audio.play()
         document.querySelector('.intro').innerHTML = ''
         alliescounter = target.dataset.counter
         allieshealth = target.dataset.health

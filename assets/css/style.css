@@ -2,6 +2,7 @@ body, html {
     min-height: 100%;
 }
 body {
+    position: relative;
     font-family: 'Cinzel Decorative', cursive;
     font-size: 30px;
     background: url(../images/harry_potter_and_the_deathly_hallows-wallpaper-1920x1080.jpg);
@@ -33,6 +34,15 @@ body {
     right: 38.5em;
     width: 180px;
     transform: rotate(80deg);
+}
+.startbtn {
+    font-family: 'Cinzel Decorative', cursive;
+    position: absolute;
+    top: 10em;
+    right: 15em;
+    font-size: 40px;
+    border-radius: 25px;
+    width: 200px;
 }
 .col.s3 {
     position: relative;
@@ -83,7 +93,7 @@ p {
     font-family: 'Cinzel Decorative', cursive;
     border-radius: 25px;
 }
-.attack:focus {
+.attack:focus, .startbtn:focus {
     background-color: white;
 }
 audio {
@@ -97,4 +107,40 @@ audio {
     font-weight: bold;
     top: 6em;
     left: 0;
+}
+@media only screen and (max-width: 1472px){
+    .title {
+        font-size: 70px;
+    }
+    .wand1 {
+        top: .5em;
+        left: 30em;
+        width: 140px;
+        transform: rotate(-80deg);
+    }
+    .wand2 {
+        top: -.3em;
+        right: 30em;
+        width: 130px;
+        transform: rotate(83deg);
+        -webkit-transform: rotate(83deg);
+        -moz-transform: rotate(83deg);
+        -ms-transform: rotate(83deg);
+        -o-transform: rotate(83deg);
+    }   
+    .intro {
+        font-size: 45px;
+        margin-top: 3%;
+    }
+    #character {
+        width: 160px;
+    }
+    p {
+        font-size: 25px;
+    }
+    .col.s3 {
+        top: 1em;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
 }
