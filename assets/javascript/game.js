@@ -31,7 +31,7 @@ const gamestart = () => {
 }
 
 const newenemy = () => {
-    if (enemyshealth <= attackbtn) {
+    if (enemyshealth <= 0) {
         enemyshealth = 0
         enemyscounter = 0
         document.querySelector('#enemychar').innerHTML = enemyshealth
@@ -67,7 +67,7 @@ const gameover = () => {
         alliesattack = 0
         document.querySelector('#attack').innerHTML = ''
         let lost = document.createElement('p')
-        lost.innerHTML =`You've been defeated!`
+        lost.innerHTML =`You lost!`
         lost.className = 'result'
         document.querySelector('#actioncontainer').append(lost)
         document.addEventListener("click",handler,true);
