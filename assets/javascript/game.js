@@ -1,19 +1,14 @@
-let alliescounter,
-    allieshealth,
-    alliesattack,
-    enemyscounter,
-    enemyshealth,
+let allied,
+    enemy,
+    basepwr = 0,
     attackbtn = 0,
-    isdoneSelect = false,
-    attacklog
+    isdoneSelect = false;
 
 let audio = new Audio('Hedwig.mp3')
 audio.loop = true
 
 
 const gamestart = () => {
-    alliescounter = ''
-    enemy = ''
     isdoneSelect = false
     document.querySelector('.container').style.visibility = 'hidden'
     let start = document.createElement('button')
@@ -25,46 +20,41 @@ const gamestart = () => {
             audio.play()
             target.style.visibility = 'hidden'
             document.querySelector('.container').style.visibility = ''
-
         }
     })
 }
 
 const newenemy = () => {
-    if (enemyshealth <= 0) {
-        enemyshealth = 0
-        enemyscounter = 0
-        document.querySelector('#enemychar').innerHTML = enemyshealth
-        if (enemyshealth === 0){
-            !isdoneSelect
+    if (enemy.health <= '0') {
+        enemy.health = '0'
+        enemy.counter = '0'
+        document.querySelector('#enemychar').innerHTML = enemy.health
+        if (enemy.health === '0'){
             document.addEventListener ('click', ({ target }) => {
                 if (target.className === 'character') {
-                    enemyscounter = target.dataset.counter
-                    enemyshealth = target.dataset.health
-                    document.querySelector('#enemychar').innerHTML = enemyshealth
+                    enemy = target.dataset
+                    document.querySelector('#enemychar').innerHTML = enemy.health
                     target.style.border = '10px solid rgb(153, 0, 0)'
                     target.classList.remove('character');
                 }
             })
             isclass = document.getElementsByClassName('character');
-            if (isclass.length > 0) {
-                
-            } else {
+            if (isclass.length <= 0 && allied.health > '0') {
                 document.querySelector('#attack').innerHTML = ''
                 let won = document.createElement('p')
                 won.innerHTML ='YOU WON!'
                 won.className = 'result'
                 document.querySelector('#actioncontainer').append(won)
-            }
+            } 
         }
     }
 }
 
 const gameover = () => {
-    if(allieshealth <= enemyscounter) {
-        allieshealth = 0
-        document.querySelector('#yourchar').innerHTML = allieshealth
-        alliesattack = 0
+    if(allied.health <= '0') {
+        allied.health = '0'
+        document.querySelector('#yourchar').innerHTML = allied.health
+        allied.attack = 0
         document.querySelector('#attack').innerHTML = ''
         let lost = document.createElement('p')
         lost.innerHTML =`You lost!`
@@ -82,17 +72,15 @@ const attackpower = () => {
     let attack = document.createElement('button')
     attack.textContent = 'Expelliarmus!'
     attack.className ='attack'
-
     document.querySelector('#attack').append(attack)
-
     document.addEventListener('click', ({target}) => {
         if (target.className === 'attack') {
-            attackbtn = alliesattack
-            alliesattack += parseInt(attackbtn)
-            enemyshealth -= attackbtn
-            allieshealth -= enemyscounter
-            document.querySelector('#yourchar').innerHTML = allieshealth
-            document.querySelector('#enemychar').innerHTML = enemyshealth
+            attackbtn = allied.attack
+            actualpwr = basepwr += parseInt(attackbtn)
+            enemy.health -= actualpwr
+            allied.health -= enemy.counter
+            document.querySelector('#yourchar').innerHTML = allied.health
+            document.querySelector('#enemychar').innerHTML = enemy.health
         }
         newenemy()
         gameover()
@@ -100,20 +88,17 @@ const attackpower = () => {
 }
 
 document.addEventListener ('click', ({ target }) => {
-    if (target.className === 'character' && !alliescounter) {
-        // audio.play()
+    if (target.className === 'character' && !allied) {
         document.querySelector('.intro').innerHTML = ''
-        alliescounter = target.dataset.counter
-        allieshealth = target.dataset.health
-        alliesattack = parseInt(target.dataset.attack)
-        document.querySelector('#yourchar').textContent = allieshealth
+        allied = target.dataset
+        basepwr = parseInt(target.dataset.attack)
+        document.querySelector('#yourchar').textContent = allied.health
         target.classList.remove('character')
         target.style.border = '10px solid rgb(42, 152, 255)';
     } else {
         if (target.className === 'character' && !isdoneSelect){
-        enemyscounter = target.dataset.counter
-        enemyshealth = target.dataset.health
-        document.querySelector('#enemychar').innerHTML = enemyshealth
+        enemy = target.dataset
+        document.querySelector('#enemychar').innerHTML = enemy.health
         target.classList.remove('character');
         target.style.border = '10px solid rgb(153, 0, 0)'
         isdoneSelect = true
