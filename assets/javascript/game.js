@@ -26,12 +26,12 @@ const gamestart = () => {
 
 const newenemy = () => {
     if (enemy.health <= '0') {
-        enemy.health = '0'
-        enemy.counter = '0'
-        document.querySelector('#enemychar').innerHTML = enemy.health
-        if (enemy.health === '0'){
+        enemy.health = ''
+        enemy.counter = ''
+        document.querySelector('#enemychar').innerHTML = '0'
+        if (!enemy.health){
             document.addEventListener ('click', ({ target }) => {
-                if (target.className === 'character') {
+                if (target.className === 'character' && !enemy.health) {
                     enemy = target.dataset
                     document.querySelector('#enemychar').innerHTML = enemy.health
                     target.style.border = '10px solid rgb(153, 0, 0)'
@@ -74,9 +74,10 @@ const attackpower = () => {
     attack.className ='attack'
     document.querySelector('#attack').append(attack)
     document.addEventListener('click', ({target}) => {
-        if (target.className === 'attack') {
+        if (target.className === 'attack' && enemy.health > 0) {
             attackbtn = allied.attack
             actualpwr = basepwr += parseInt(attackbtn)
+            console.log(actualpwr)
             enemy.health -= actualpwr
             allied.health -= enemy.counter
             document.querySelector('#yourchar').innerHTML = allied.health
